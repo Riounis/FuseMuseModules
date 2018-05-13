@@ -82,15 +82,15 @@ For descriptions of the fields in the JSON below, please see the libfm source co
 {
 	pitch: 			        number,
 	duration:		        number,
-	triplet: 			      boolean (optional),
+	triplet:			boolean (optional),
 	dotted: 		        boolean (optional),
-	double_dotted: 	    boolean (optional),
-	staccato:  		      boolean (optional),
+	double_dotted:			boolean (optional),
+	staccato:  		      	boolean (optional),
 	tenuto:  		        boolean (optional),
 	accent:  		        boolean (optional),
-	fermata:  		      boolean (optional),
+	fermata:  		      	boolean (optional),
 	tied: 			        boolean (optional),
-	slurred:  		      boolean (optional),
+	slurred:  		      	boolean (optional),
 	type: 			        String (value should always be “note”)
 }
 ```
@@ -101,15 +101,15 @@ For descriptions of the fields in the JSON below, please see the libfm source co
 {
 	pitches: 		        [number],
 	duration:		        number,
-	triplet: 			      boolean (optional),
+	triplet: 			boolean (optional),
 	dotted: 		        boolean (optional),
-	double_dotted: 	    boolean (optional),
-	staccato:  		      boolean (optional),
+	double_dotted: 	    		boolean (optional),
+	staccato:  		      	boolean (optional),
 	tenuto:  		        boolean (optional),
 	accent:  		        boolean (optional),
-	fermata:  		      boolean (optional),
+	fermata:  		      	boolean (optional),
 	tied: 			        boolean (optional),
-	slurred:  		      boolean (optional),
+	slurred:  		      	boolean (optional),
 	type: 			        String (value should always be “chord”)
 }
 ```
@@ -130,8 +130,8 @@ For descriptions of the fields in the JSON below, please see the libfm source co
 
 ```
 {
-	tonic: 			        number,
-	intervals: 		      [number]
+	tonic: 			      	number,
+	intervals: 		      	[number]
 }
 ```
 
@@ -139,11 +139,11 @@ For descriptions of the fields in the JSON below, please see the libfm source co
 
 ```
 {
-	num: 			          number,
-	denom:	 	          number,
-	tempo: 		          number,
-	key: 			          Key,
-	position: 		      number
+	num: 			 	number,
+	denom:	 	          	number,
+	tempo: 		          	number,
+	key: 			        Key,
+	position: 		      	number
 }
 ```
 
@@ -162,8 +162,8 @@ For descriptions of the fields in the JSON below, please see the libfm source co
 ```
 {
 	name: 			        String,
-	duration: 		      number,
-	chord_progression: 	Part
+	duration: 		      	number,
+	chord_progression: 		Part
 }
 ```
 
@@ -171,12 +171,12 @@ For descriptions of the fields in the JSON below, please see the libfm source co
 
 ```
 {
-	children: 		      [PacketPart],
+	children: 		      	[PacketPart],
 	part: 			        Part,
-	packet_path: 		    String,
+	packet_path: 		    	String,
 	mode: 			        String,
-	executed: 		      boolean,
-	is_active: 		      boolean
+	executed: 		      	boolean,
+	is_active: 		      	boolean
 }
 ```
 
@@ -186,9 +186,9 @@ For descriptions of the fields in the JSON below, please see the libfm source co
 {
 	metrics: 		        [CompositionMetrics],
 	parts: 			        [Part],
-	pattern_segments: 	[PatternSegment],
+	pattern_segments: 		[PatternSegment],
 	pattern: 		        [String],
-	packet_tree_root: 	PacketPart
+	packet_tree_root: 		PacketPart
 }
 ```
 
