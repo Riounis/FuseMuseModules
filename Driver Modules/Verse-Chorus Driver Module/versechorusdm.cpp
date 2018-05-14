@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <nlohmann/json.hpp>
-#include "libfm/composition.h"
-#include "libfm/utilities.h"
+#include "../../libfm/composition.h"
+#include "../../libfm/utilities.h"
 
 int main() {
 	Composition comp;
@@ -55,7 +55,7 @@ int main() {
 	temp += rand() % 180;
 	mets->tempo = temp;
 	mets->position = 0;
-	comp.set_initial_composition_metrics(&mets);
+	comp.set_initial_composition_metrics(mets);
 	//printf("metrics generated\n");
 	
 	// Generate generic chord progression
@@ -127,10 +127,10 @@ int main() {
 	PatternSegment *intro = new PatternSegment("intro", introLength * mets->time_signature.duration_of_measure());
 	Part *introPart = new Part();
 	for (int i = 0; i < introLength / 4; i++) {
-		Chord *c = new Chord(mets->key.get_simple_chord(chords[0]), mets->time_signature.duration_of_measure());
-		Chord *c1 = new Chord(mets->key.get_simple_chord(chords[1]), mets->time_signature.duration_of_measure());
-		Chord *c2 = new Chord(mets->key.get_simple_chord(chords[2]), mets->time_signature.duration_of_measure());
-		Chord *c3 = new Chord(mets->key.get_simple_chord(chords[3]), mets->time_signature.duration_of_measure());
+		Chord *c = new Chord(mets->key.get_chord(chords[0]), mets->time_signature.duration_of_measure());
+		Chord *c1 = new Chord(mets->key.get_chord(chords[1]), mets->time_signature.duration_of_measure());
+		Chord *c2 = new Chord(mets->key.get_chord(chords[2]), mets->time_signature.duration_of_measure());
+		Chord *c3 = new Chord(mets->key.get_chord(chords[3]), mets->time_signature.duration_of_measure());
 		introPart->append_chord(c);
 		introPart->append_chord(c1);
 		introPart->append_chord(c2);
@@ -148,10 +148,10 @@ int main() {
 	PatternSegment *verse = new PatternSegment("verse", verseLength * mets->time_signature.duration_of_measure());
 	Part *versePart = new Part();
 	for (int i = 0; i < verseLength / 4; i++) {
-		Chord *c = new Chord(mets->key.get_simple_chord(chords[0]), mets->time_signature.duration_of_measure());
-		Chord *c1 = new Chord(mets->key.get_simple_chord(chords[1]), mets->time_signature.duration_of_measure());
-		Chord *c2 = new Chord(mets->key.get_simple_chord(chords[2]), mets->time_signature.duration_of_measure());
-		Chord *c3 = new Chord(mets->key.get_simple_chord(chords[3]), mets->time_signature.duration_of_measure());
+		Chord *c = new Chord(mets->key.get_chord(chords[0]), mets->time_signature.duration_of_measure());
+		Chord *c1 = new Chord(mets->key.get_chord(chords[1]), mets->time_signature.duration_of_measure());
+		Chord *c2 = new Chord(mets->key.get_chord(chords[2]), mets->time_signature.duration_of_measure());
+		Chord *c3 = new Chord(mets->key.get_chord(chords[3]), mets->time_signature.duration_of_measure());
 		versePart->append_chord(c);
 		versePart->append_chord(c1);
 		versePart->append_chord(c2);
@@ -169,10 +169,10 @@ int main() {
 	PatternSegment* prechorus = new PatternSegment("prechorus", prechorusLength * mets->time_signature.duration_of_measure());
 	Part *prechorusPart = new Part();
 	for (int i = 0; i < prechorusLength / 4; i++) {
-		Chord *c = new Chord(mets->key.get_simple_chord(chords[0]), mets->time_signature.duration_of_measure());
-		Chord *c1 = new Chord(mets->key.get_simple_chord(chords[1]), mets->time_signature.duration_of_measure());
-		Chord *c2 = new Chord(mets->key.get_simple_chord(chords[2]), mets->time_signature.duration_of_measure());
-		Chord *c3 = new Chord(mets->key.get_simple_chord(chords[3]), mets->time_signature.duration_of_measure());
+		Chord *c = new Chord(mets->key.get_chord(chords[0]), mets->time_signature.duration_of_measure());
+		Chord *c1 = new Chord(mets->key.get_chord(chords[1]), mets->time_signature.duration_of_measure());
+		Chord *c2 = new Chord(mets->key.get_chord(chords[2]), mets->time_signature.duration_of_measure());
+		Chord *c3 = new Chord(mets->key.get_chord(chords[3]), mets->time_signature.duration_of_measure());
 		prechorusPart->append_chord(c);
 		prechorusPart->append_chord(c1);
 		prechorusPart->append_chord(c2);
@@ -190,10 +190,10 @@ int main() {
 	PatternSegment *chorus = new PatternSegment("chorus", chorusLength * mets->time_signature.duration_of_measure());
 	Part *chorusPart = new Part();
 	for (int i = 0; i < chorusLength / 4; i++) {
-		Chord *c = new Chord(mets->key.get_simple_chord(chords[0]), mets->time_signature.duration_of_measure());
-		Chord *c1 = new Chord(mets->key.get_simple_chord(chords[1]), mets->time_signature.duration_of_measure());
-		Chord *c2 = new Chord(mets->key.get_simple_chord(chords[2]), mets->time_signature.duration_of_measure());
-		Chord *c3 = new Chord(mets->key.get_simple_chord(chords[3]), mets->time_signature.duration_of_measure());
+		Chord *c = new Chord(mets->key.get_chord(chords[0]), mets->time_signature.duration_of_measure());
+		Chord *c1 = new Chord(mets->key.get_chord(chords[1]), mets->time_signature.duration_of_measure());
+		Chord *c2 = new Chord(mets->key.get_chord(chords[2]), mets->time_signature.duration_of_measure());
+		Chord *c3 = new Chord(mets->key.get_chord(chords[3]), mets->time_signature.duration_of_measure());
 		chorusPart->append_chord(c);
 		chorusPart->append_chord(c1);
 		chorusPart->append_chord(c2);
@@ -211,10 +211,10 @@ int main() {
 	PatternSegment *bridge = new PatternSegment("bridge", bridgeLength * mets->time_signature.duration_of_measure());
 	Part *bridgePart = new Part;
 	for (int i = 0; i < bridgeLength / 4; i++) {
-		Chord *c = new Chord(mets->key.get_simple_chord(chords[0]), mets->time_signature.duration_of_measure());
-		Chord *c1 = new Chord(mets->key.get_simple_chord(chords[1]), mets->time_signature.duration_of_measure());
-		Chord *c2 = new Chord(mets->key.get_simple_chord(chords[2]), mets->time_signature.duration_of_measure());
-		Chord *c3 = new Chord(mets->key.get_simple_chord(chords[3]), mets->time_signature.duration_of_measure());
+		Chord *c = new Chord(mets->key.get_chord(chords[0]), mets->time_signature.duration_of_measure());
+		Chord *c1 = new Chord(mets->key.get_chord(chords[1]), mets->time_signature.duration_of_measure());
+		Chord *c2 = new Chord(mets->key.get_chord(chords[2]), mets->time_signature.duration_of_measure());
+		Chord *c3 = new Chord(mets->key.get_chord(chords[3]), mets->time_signature.duration_of_measure());
 		bridgePart->append_chord(c);
 		bridgePart->append_chord(c1);
 		bridgePart->append_chord(c2);
